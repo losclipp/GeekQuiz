@@ -12,9 +12,11 @@ namespace GeekQuiz
         {
 			// Web API configuration and services
 
-			// Use camel case for JSON data.
+			// Remove xml default serializer
 			var appXmlType = config.Formatters.XmlFormatter.SupportedMediaTypes.FirstOrDefault(t => t.MediaType == "application/xml");
 			config.Formatters.XmlFormatter.SupportedMediaTypes.Remove(appXmlType);
+			
+			// Use camel case for JSON data.
 			config.Formatters.JsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
 
 			
