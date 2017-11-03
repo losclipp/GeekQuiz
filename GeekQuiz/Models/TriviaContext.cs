@@ -2,7 +2,7 @@
 {
     using System.Data.Entity;
 
-    public class TriviaContext : DbContext
+    public class TriviaContext : DbContext, ITriviaContext
     {
         public TriviaContext()
             : base("name=DefaultConnection")

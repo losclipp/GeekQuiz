@@ -105,5 +105,10 @@ namespace GeekQuiz
         {
             return new ApplicationSignInManager(context.GetUserManager<ApplicationUserManager>(), context.Authentication);
         }
-    }
+
+		public static ApplicationSignInManager Create(IOwinContext context)
+		{
+			return new ApplicationSignInManager(context.GetUserManager<ApplicationUserManager>(), context.Authentication);
+		}
+	}
 }
